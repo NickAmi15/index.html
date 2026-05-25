@@ -80,16 +80,12 @@
 
   /* ABOUT */
   .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 2.5rem; align-items: start; }
- .profile-photo {
-  width: 100%;
-  max-width: 220px;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
+.avatar {
+  width: 260px;
+  height: 260px;
+  overflow: hidden;
   border-radius: 8px;
-  border: 2px solid #d6cdb8;
-}
-
-
+} 
   .about-text p { color: var(--muted); margin-bottom: 1rem; }
   .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
   .tag {
@@ -148,6 +144,15 @@
     .nav-links { gap: 1rem; }
     .hero-deco { display: none; }
   }
+ .profile-photo {
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #d6cdb8;
+}
+
 </style>
 </head>
 <body>
@@ -179,7 +184,7 @@
 <section id="about">
   <h2>About Me</h2>
   <div class="about-grid">
-    <img src="photo.jpg" alt="Nick Amicon" style="width:100%; border-radius:8px; border:2px solid #d6cdb8;"/>
+    <img src="photo.jpg" alt="Nick Amicon" class="profile-photo"/>
     <div class="about-text">
       <p>Hi! I'm Nick — a physical therapist with 5 years of experience in outpatient orthopedic PT. I specialize in helping patients recover from surgeries, sports injuries, and musculoskeletal conditions so they can get back to doing what they love.</p>
       <p>My approach is built around three things I'm genuinely passionate about: thoughtful exercise prescription, hands-on manual therapy, and making sure every patient truly understands their condition and recovery. I believe an informed patient is an empowered one — and that education is just as important as any technique in the clinic.</p>
