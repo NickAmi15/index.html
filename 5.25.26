@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Truth About Meniscectomy — Nick Amicon PT</title>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f5f0e8;
+    --white: #fdfaf4;
+    --text: #1c2b1e;
+    --muted: #5a6b5c;
+    --accent: #2d6a4f;
+    --accent-light: #d8ead2;
+    --gold: #b08d57;
+    --border: #d6cdb8;
+    --radius: 8px;
+  }
+  body {
+    font-family: 'Georgia', serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding-bottom: 80px;
+  }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(245,240,232,0.94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .nav-logo { font-size: 1.1rem; font-weight: bold; color: var(--accent); }
+  .nav-links { display: flex; gap: 2rem; font-family: sans-serif; font-size: 0.9rem; }
+  .nav-links a { color: var(--muted); }
+  .nav-links a:hover { color: var(--accent); }
+
+  .post-container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 60px 2rem;
+  }
+
+  .post-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+  }
+
+  .post-meta {
+    font-family: sans-serif;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 2rem;
+  }
+
+  .post-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-top: 3rem;
+    font-family: sans-serif;
+    color: var(--accent);
+  }
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-logo">Nick Amicon PT</div>
+  <div class="nav-links">
+    <a href="index.html#about">About</a>
+    <a href="index.html#services">Services</a>
+    <a href="blog.html">Blog</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="post-container">
+
+  <h1 class="post-title">The Truth About Meniscectomy</h1>
+  <div class="post-meta">Published: May 25, 2026 · 3 min read</div>
+
+  <div class="post-content">
+
+    <p><strong>Here is what they don’t tell you about meniscectomy.</strong></p>
+
+    <p><strong>Knee swelling:</strong> Even after the procedure, swelling can linger longer than most people expect. It’s normal, but it can be frustrating if you’re trying to get back to activity quickly.</p>
+
+    <p><strong>There is still pain afterwards:</strong> A meniscectomy removes the damaged tissue, but it doesn’t magically erase the irritation inside the joint. Some discomfort is common during the early phases of recovery.</p>
+
+  </div>
+
+  <a class="back-link" href="blog.html">← Back to Blog</a>
+
+</div>
+
+</body>
+</html>
