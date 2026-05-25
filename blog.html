@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Blog — Nick Amicon PT</title>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f5f0e8;
+    --white: #fdfaf4;
+    --text: #1c2b1e;
+    --muted: #5a6b5c;
+    --accent: #2d6a4f;
+    --accent-light: #d8ead2;
+    --gold: #b08d57;
+    --border: #d6cdb8;
+    --radius: 8px;
+  }
+  body {
+    font-family: 'Georgia', serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding-bottom: 80px;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(245,240,232,0.94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .nav-logo { font-size: 1.1rem; font-weight: bold; color: var(--accent); }
+  .nav-links { display: flex; gap: 2rem; font-family: sans-serif; font-size: 0.9rem; }
+  .nav-links a { color: var(--muted); }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* BLOG ARCHIVE */
+  .archive-container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 60px 2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent-light);
+    padding-bottom: 0.75rem;
+  }
+
+  .blog-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .post-card {
+    display: block;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  .post-meta {
+    font-family: sans-serif;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+  .post-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+  .post-excerpt {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+  .post-tag {
+    font-family: sans-serif;
+    font-size: 0.75rem;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+  }
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-logo">Nick Amicon PT</div>
+  <div class="nav-links">
+    <a href="index.html#about">About</a>
+    <a href="index.html#services">Services</a>
+    <a href="blog.html">Blog</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="archive-container">
+  <h1>Blog Archive</h1>
+
+  <div class="blog-grid">
+
+    <!-- BLOG POST 1 -->
+    <a class="post-card" href="low-back-pain.html">
+      <div class="post-meta">May 18, 2026 · 5 min read</div>
+      <div class="post-title">Low Back Pain and Its Effects</div>
+      <div class="post-excerpt">ACL surgery is just the beginning...</div>
+      <span class="post-tag">Orthopedics</span>
+    </a>
+
+    <!-- BLOG POST 2 -->
+    <a class="post-card" href="acl-rehab.html">
+      <div class="post-meta">May 10, 2026 · 7 min read</div>
+      <div class="post-title">The Truth About ACL Rehab</div>
+      <div class="post-excerpt">What surgeons don’t tell you about the first 12 weeks...</div>
+      <span class="post-tag">Sports Medicine</span>
+    </a>
+
+    <!-- BLOG POST 3 -->
+    <a class="post-card" href="shoulder-pain.html">
+      <div class="post-meta">April 28, 2026 · 4 min read</div>
+      <div class="post-title">Why Shoulder Pain Never Fully Goes Away</div>
+      <div class="post-excerpt">And what you can actually do about it...</div>
+      <span class="post-tag">Orthopedics</span>
+    </a>
+
+  </div>
+</div>
+
+</body>
+</html>
