@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Nick Amicon — Physical Therapist</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f5f0e8;
+    --white: #fdfaf4;
+    --text: #1c2b1e;
+    --muted: #5a6b5c;
+    --accent: #2d6a4f;
+    --accent-light: #d8ead2;
+    --accent-mid: #52976e;
+    --gold: #b08d57;
+    --border: #d6cdb8;
+    --radius: 8px;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Georgia', serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(245,240,232,0.94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .nav-logo { font-size: 1.1rem; font-weight: bold; color: var(--accent); letter-spacing: -0.5px; }
+  .nav-links { display: flex; gap: 2rem; font-family: sans-serif; font-size: 0.9rem; }
+  .nav-links a { color: var(--muted); transition: color 0.2s; }
+  .nav-links a:hover { color: var(--accent); text-decoration: none; }
+
+  /* SECTIONS */
+  section { padding: 80px 2rem; max-width: 760px; margin: 0 auto; }
+  h2 {
+    font-size: 1.6rem; margin-bottom: 2rem; letter-spacing: -0.5px;
+    border-bottom: 2px solid var(--accent-light); padding-bottom: 0.75rem;
+    color: var(--accent);
+  }
+
+  /* HERO */
+  #hero {
+    min-height: 70vh; display: flex; flex-direction: column;
+    justify-content: center; max-width: 760px; margin: 0 auto; padding: 80px 2rem;
+    position: relative;
+  }
+  .hero-label {
+    font-family: sans-serif; font-size: 0.8rem; text-transform: uppercase;
+    letter-spacing: 2px; color: var(--gold); margin-bottom: 1rem;
+  }
+  #hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem); line-height: 1.15;
+    letter-spacing: -1px; margin-bottom: 1.25rem; color: var(--text);
+  }
+  #hero h1 em { font-style: italic; color: var(--accent); }
+  #hero p { font-size: 1.15rem; color: var(--muted); max-width: 520px; margin-bottom: 2rem; }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn {
+    font-family: sans-serif; font-size: 0.9rem; padding: 0.65rem 1.4rem;
+    border-radius: var(--radius); cursor: pointer; transition: all 0.2s; border: none;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: #235a40; }
+  .btn-outline { background: transparent; color: var(--text); border: 1.5px solid var(--border); }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* decorative leaf accent */
+  .hero-deco {
+    position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+    font-size: 9rem; opacity: 0.07; user-select: none; pointer-events: none;
+  }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 2.5rem; align-items: start; }
+  .avatar {
+    width: 100%; aspect-ratio: 1;
+    background: var(--accent-light); border-radius: var(--radius);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--accent); font-family: sans-serif; font-size: 0.85rem;
+    border: 2px solid var(--border);
+  }
+  .about-text p { color: var(--muted); margin-bottom: 1rem; }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+  .tag {
+    font-family: sans-serif; font-size: 0.78rem; padding: 0.3rem 0.75rem;
+    background: var(--accent-light); border-radius: 999px; color: var(--accent);
+    border: 1px solid #b8d8c4;
+  }
+
+  /* BLOG */
+  .blog-grid { display: grid; gap: 1.5rem; }
+  .post-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.5rem;
+    transition: box-shadow 0.2s, transform 0.2s; cursor: pointer;
+    border-left: 4px solid var(--accent);
+  }
+  .post-card:hover { box-shadow: 0 4px 20px rgba(45,106,79,0.1); transform: translateY(-2px); }
+  .post-meta { font-family: sans-serif; font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem; }
+  .post-title { font-size: 1.15rem; margin-bottom: 0.5rem; color: var(--text); }
+  .post-excerpt { font-size: 0.93rem; color: var(--muted); }
+  .post-tag {
+    display: inline-block; margin-top: 0.75rem;
+    font-family: sans-serif; font-size: 0.75rem; color: var(--accent);
+    background: var(--accent-light); padding: 0.2rem 0.6rem; border-radius: 999px;
+  }
+
+  /* CONTACT */
+  #contact { text-align: center; }
+  #contact p { color: var(--muted); margin-bottom: 2rem; font-size: 1.05rem; }
+  .contact-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; font-family: sans-serif; font-size: 0.9rem; }
+  .contact-link {
+    display: flex; align-items: center; gap: 0.4rem;
+    padding: 0.6rem 1.2rem; border: 1.5px solid var(--border);
+    border-radius: var(--radius); color: var(--text); transition: all 0.2s;
+    background: var(--white);
+  }
+  .contact-link:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; background: var(--accent-light); }
+
+  /* DIVIDER */
+  .divider {
+    max-width: 760px; margin: 0 auto; padding: 0 2rem;
+    border: none; border-top: 1px solid var(--border);
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center; padding: 2rem; border-top: 1px solid var(--border);
+    font-family: sans-serif; font-size: 0.82rem; color: var(--muted);
+    background: var(--white);
+  }
+  footer span { color: var(--accent); }
+
+  @media (max-width: 600px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .avatar { max-width: 120px; }
+    .nav-links { gap: 1rem; }
+    .hero-deco { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Nick Amicon, DPT</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-deco">🌿</div>
+  <div class="hero-label">Physical Therapist · Chester County, PA</div>
+  <h1>Helping people <em>move better,</em> feel stronger, and live fully.</h1>
+  <p>Outpatient orthopedic PT passionate about exercise prescription, manual therapy, and empowering patients through education.</p>
+  <div class="hero-btns">
+    <a href="#blog"><button class="btn btn-primary">Read the Blog</button></a>
+    <a href="#contact"><button class="btn btn-outline">Get in Touch</button></a>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <div class="about-grid">
+    <img src="photo.jpg" alt="Nick Amicon" style="width:100%; border-radius:8px; border:2px solid #d6cdb8;"/>
+    <div class="about-text">
+      <p>Hi! I'm Nick — a physical therapist with 5 years of experience in outpatient orthopedic PT. I specialize in helping patients recover from surgeries, sports injuries, and musculoskeletal conditions so they can get back to doing what they love.</p>
+      <p>My approach is built around three things I'm genuinely passionate about: thoughtful exercise prescription, hands-on manual therapy, and making sure every patient truly understands their condition and recovery. I believe an informed patient is an empowered one — and that education is just as important as any technique in the clinic.</p>
+      <div class="tags">
+        <span class="tag">Orthopedic PT</span>
+        <span class="tag">Post-Surgical Rehab</span>
+        <span class="tag">Sports Injuries</span>
+        <span class="tag">Manual Therapy</span>
+        <span class="tag">Exercise Prescription</span>
+        <span class="tag">Chester County, PA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- BLOG -->
+<section id="blog">
+  <h2>Blog</h2>
+  <div class="blog-grid">
+    <div class="post-card">
+      <div class="post-meta">May 18, 2026 &nbsp;·&nbsp; 5 min read</div>
+      <div class="post-title">What to Expect After ACL Reconstruction</div>
+      <div class="post-excerpt">ACL surgery is just the beginning. Here's an honest look at the recovery timeline, the hard parts, and how to set yourself up for a full return to sport.</div>
+      <span class="post-tag">Orthopedics</span>
+    </div>
+    <div class="post-card">
+      <div class="post-meta">April 30, 2026 &nbsp;·&nbsp; 7 min read</div>
+      <div class="post-title">Why Your Shoulder Pain Might Not Be a Rotator Cuff Tear</div>
+      <div class="post-excerpt">Imaging doesn't always tell the whole story. I break down why an MRI finding isn't always the cause of your pain — and what to do about it.</div>
+      <span class="post-tag">Patient Education</span>
+    </div>
+    <div class="post-card">
+      <div class="post-meta">March 12, 2026 &nbsp;·&nbsp; 4 min read</div>
+      <div class="post-title">The Truth About Rest and Recovery</div>
+      <div class="post-excerpt">Complete rest is rarely the answer. Here's what the evidence says about staying active during injury and why movement is often the best medicine.</div>
+      <span class="post-tag">Rehab</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 style="border:none; text-align:center;">Get in Touch</h2>
+  <p>Have a question or want to connect? I'd love to hear from you.</p>
+  <div class="contact-links">
+    <a class="contact-link" href="mailto:nick@example.com">✉ Email</a>
+    <a class="contact-link" href="#">in LinkedIn</a>
+    <a class="contact-link" href="#">𝕏 Twitter</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 <span>Nick Amicon, DPT</span> · Chester County, PA
+  <br/><br/>
+  <small style="color: var(--muted); font-size: 0.75rem;">The content on this site is for informational purposes only and does not constitute medical advice. Always consult a licensed healthcare provider for diagnosis and treatment.</small>
+</footer>
+
+</body>
+</html>
