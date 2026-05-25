@@ -80,13 +80,13 @@
 
   /* ABOUT */
   .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 2.5rem; align-items: start; }
-  .avatar {
-    width: 100%; aspect-ratio: 1;
-    background: var(--accent-light); border-radius: var(--radius);
-    display: flex; align-items: center; justify-content: center;
-    color: var(--accent); font-family: sans-serif; font-size: 0.85rem;
-    border: 2px solid var(--border);
-  }
+ .avatar {
+  width: 280px;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
   .about-text p { color: var(--muted); margin-bottom: 1rem; }
   .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
   .tag {
